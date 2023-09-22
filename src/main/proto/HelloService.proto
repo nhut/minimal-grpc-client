@@ -1,0 +1,17 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package fi.donhut.grpc;
+
+message HelloRequest {
+  string firstName = 1;
+  string lastName = 2;
+}
+
+message HelloResponse {
+  string greeting = 1;
+  string firstName = 2;
+}
+
+service HelloService {
+  rpc hello(HelloRequest) returns (HelloResponse);
+}
